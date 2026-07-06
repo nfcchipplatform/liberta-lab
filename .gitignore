@@ -11,3 +11,6 @@ Thumbs.db
 # deploy secrets (local only)
 .env
 deploy.ps1
+
+# generated assets cache
+assets/

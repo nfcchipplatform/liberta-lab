@@ -1,4 +1,4 @@
-/* LIBERTA LABO — page-specific styles (lab.html) */
+/* LIBERTA LAB — page-specific styles */
 
 body.lab-page {
   opacity: 1;
@@ -9,65 +9,380 @@ body.lab-page {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
+.header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .header__nav__link.is-current {
   color: var(--color-accent);
 }
 
-.lab-hero {
-  position: relative;
-  min-height: clamp(28rem, 70svh, 40rem);
-  display: flex;
-  align-items: center;
-  padding: clamp(6rem, 12vw, 9rem) clamp(1.25rem, 5.5vw, 5rem) clamp(3rem, 6vw, 5rem);
-  overflow: hidden;
+.header__nav__link.is-current::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
-.lab-hero__stars {
+/* ========== HERO (mv-like) ========== */
+.lab-mv {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lab-mv::before {
+  content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.78) 45%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+}
+
+.lab-mv__stars {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   pointer-events: none;
 }
 
-.lab-hero__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 52rem;
+.lab-mv__stars .star {
+  opacity: 1;
 }
 
-.lab-hero__label {
+.lab-mv__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.lab-mv__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  padding: clamp(6rem, 12vw, 9rem) clamp(1.25rem, 5.5vw, 5rem) clamp(3rem, 6vw, 5rem);
+}
+
+.lab-mv__label {
   font-family: "Heebo", sans-serif;
-  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  font-size: clamp(0.7rem, 1.1vw, 0.85rem);
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 1rem;
 }
 
-.lab-hero__title {
+.lab-mv__title {
   font-family: "Heebo", sans-serif;
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
   font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1.1;
+  letter-spacing: 0.1em;
+  line-height: 1.05;
   color: var(--color-text);
 }
 
-.lab-hero__lead {
+.lab-mv__lead {
   margin-top: clamp(1.25rem, 2.5vw, 2rem);
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-family: "Shippori Mincho B1", serif;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+.lab-mv__sub {
+  margin-top: 1rem;
+  max-width: 36rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
   line-height: 2;
   color: var(--color-text-muted);
 }
 
-.lab-hero__btn {
+.lab-mv__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
+.lab-mv__btn-outline.button-normal {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .lab-mv__btn-outline.button-normal:hover {
+    background: var(--color-accent);
+    color: #fff;
+  }
+}
+
+/* ========== LIBERTA P OVERVIEW ========== */
+.lab-p-overview {
+  margin-top: clamp(2rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .lab-p-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lab-p-overview__visual {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.lab-p-overview__visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.lab-p-overview__cols {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lab-p-overview__col {
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.lab-p-overview__num {
+  font-family: "Heebo", sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+}
+
+.lab-p-overview__heading {
+  margin-top: 0.35rem;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+}
+
+.lab-p-overview__text {
+  margin-top: 0.5rem;
+  font-size: clamp(0.85rem, 1vw, 0.92rem);
+  line-height: 1.9;
+  color: var(--color-text-muted);
+}
+
+/* ========== LINEUP ========== */
 .labo--alt {
   background-color: var(--color-bg-alt);
 }
 
+.lab-lineup__grid {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.lab-lineup__tag {
+  display: inline-block;
+  font-family: "Heebo", sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+/* ========== ESG (features reuse) ========== */
+.lab-esg {
+  background: transparent;
+  padding: clamp(4rem, 8vw, 7.5rem) 0;
+}
+
+.lab-esg .section-heading {
+  padding-inline: clamp(1.25rem, 5.5vw, 5rem);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* ========== TABS ========== */
+.lab-tabs {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.lab-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.lab-tabs__btn {
+  position: relative;
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  color: var(--color-text-muted);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s var(--ease-out);
+}
+
+.lab-tabs__btn::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 0.35s var(--ease-out);
+}
+
+.lab-tabs__btn.is-active {
+  color: var(--color-accent);
+}
+
+.lab-tabs__btn.is-active::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) {
+  .lab-tabs__btn:hover {
+    color: var(--color-accent);
+  }
+}
+
+.lab-tabs__panel {
+  display: none;
+  animation: labTabIn 0.45s var(--ease-out);
+}
+
+.lab-tabs__panel.is-active {
+  display: block;
+}
+
+@keyframes labTabIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lab-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media screen and (max-width: 768px) {
+  .lab-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lab-benefit-card {
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.lab-benefit-card__title {
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: var(--color-accent-dark);
+}
+
+.lab-benefit-card__text {
+  margin-top: 0.75rem;
+  font-size: clamp(0.85rem, 1vw, 0.92rem);
+  line-height: 1.9;
+  color: var(--color-text-muted);
+}
+
+/* ========== GOVERNANCE ========== */
+.lab-governance {
+  padding: clamp(4rem, 8vw, 7.5rem) clamp(1.25rem, 5.5vw, 5rem);
+  background: #fff;
+}
+
+.lab-governance__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.lab-governance__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media screen and (max-width: 768px) {
+  .lab-governance__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lab-governance__item {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--color-bg-alt);
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+}
+
+.lab-governance__icon {
+  font-family: "Heebo", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+}
+
+.lab-governance__title {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+}
+
+.lab-governance__text {
+  margin-top: 0.75rem;
+  font-size: clamp(0.85rem, 1vw, 0.92rem);
+  line-height: 1.9;
+  color: var(--color-text-muted);
+}
+
+/* ========== CTA ========== */
 .lab-cta {
   padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5.5vw, 5rem);
 }
@@ -78,7 +393,8 @@ body.lab-page {
   text-align: center;
   padding: clamp(2rem, 4vw, 3rem);
   background: #fff;
-  border-radius: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
@@ -98,4 +414,40 @@ body.lab-page {
 .lab-cta .button-normal {
   margin-top: 1.75rem;
   display: inline-flex;
+}
+
+/* ========== SCROLL ANIMATIONS (lab page) ========== */
+.lab-page .fade-in,
+.lab-page .scale-in {
+  opacity: 0;
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+
+.lab-page .scale-in {
+  transform: scale(1.05);
+}
+
+.lab-page .is-view .fade-in,
+.lab-page .is-view .scale-in,
+.lab-page .is-view.fade-in,
+.lab-page .is-view.scale-in {
+  opacity: 1;
+  transform: none;
+}
+
+.lab-page .clip-text-anim {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 900ms var(--ease-out), transform 900ms var(--ease-out);
+}
+
+.lab-page .is-view .clip-text-anim {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-tabs__panel {
+    animation: none;
+  }
 }
