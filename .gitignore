@@ -8,6 +8,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# deploy secrets
+# deploy secrets (local only)
 .env
-deploy.sh
+deploy.ps1
