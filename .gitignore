@@ -14,3 +14,6 @@ deploy.ps1
 
 # generated assets cache
 assets/
+
+# large extracted reference text
+docs/**/slide_exp_doc_extracted.txt
