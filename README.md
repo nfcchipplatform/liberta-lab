@@ -9,6 +9,7 @@
 | `lab.html` | LABO ページ本体 |
 | `lab.css` | ページ固有スタイル |
 | `lab.js` | ページ固有スクリプト |
+| `CURSOR_PROMPT.md` | LP 全面制作時に Cursor へ渡す指示文 |
 
 ## 更新の流れ
 
