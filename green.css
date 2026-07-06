@@ -1,0 +1,208 @@
+/* GREEN page — extends lab.css */
+
+.green-page .lab-mv__title {
+  letter-spacing: 0.06em;
+}
+
+.green-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media screen and (max-width: 960px) {
+  .green-mission-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.green-mission-card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.green-mission-card__num {
+  font-family: "Heebo", sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--color-green);
+  letter-spacing: 0.1em;
+}
+
+.green-mission-card__title {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}
+
+.green-mission-card__text {
+  margin-top: 0.75rem;
+  font-size: clamp(0.85rem, 1vw, 0.92rem);
+  line-height: 1.9;
+  color: var(--color-text-muted);
+}
+
+.green-forest-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .green-forest-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.green-forest-layout__visual {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.green-forest-layout__visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.green-forest-layout__text {
+  margin-top: 1rem;
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  line-height: 2;
+  color: var(--color-text-muted);
+}
+
+.green-forest-list {
+  margin-top: 1.25rem;
+  padding-left: 0;
+}
+
+.green-forest-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  line-height: 2;
+  color: var(--color-text);
+}
+
+.green-forest-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-green);
+}
+
+.green-formula {
+  max-width: 720px;
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+  background: var(--color-bg-alt);
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  border-left: 4px solid var(--color-green);
+}
+
+.green-formula__label {
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-weight: 600;
+  color: var(--color-green);
+  letter-spacing: 0.08em;
+}
+
+.green-formula__eq {
+  margin-top: 0.75rem;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.green-formula__note {
+  margin-top: 1rem;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  line-height: 1.9;
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+.green-soil-note {
+  max-width: 900px;
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+}
+
+.green-soil-note__title {
+  font-weight: 700;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--color-accent-dark);
+}
+
+.green-soil-note__text {
+  margin-top: 0.75rem;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  line-height: 2;
+  color: var(--color-text-muted);
+}
+
+.green-tools-note {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  font-size: clamp(0.85rem, 1vw, 0.92rem);
+  color: var(--color-text-muted);
+}
+
+.green-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.green-talent {
+  background: var(--color-bg-alt);
+}
+
+.green-talent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media screen and (max-width: 768px) {
+  .green-talent-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.green-talent .lab-governance__icon {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 1;
+  color: var(--color-green);
+}
+
+.lab-lineup__tag {
+  display: inline-block;
+  font-family: "Heebo", sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--color-green);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
