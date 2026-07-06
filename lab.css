@@ -1,0 +1,101 @@
+/* LIBERTA LABO — page-specific styles (lab.html) */
+
+body.lab-page {
+  opacity: 1;
+}
+
+.header--solid {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.header__nav__link.is-current {
+  color: var(--color-accent);
+}
+
+.lab-hero {
+  position: relative;
+  min-height: clamp(28rem, 70svh, 40rem);
+  display: flex;
+  align-items: center;
+  padding: clamp(6rem, 12vw, 9rem) clamp(1.25rem, 5.5vw, 5rem) clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+}
+
+.lab-hero__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.lab-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+}
+
+.lab-hero__label {
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.lab-hero__title {
+  font-family: "Heebo", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.lab-hero__lead {
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  line-height: 2;
+  color: var(--color-text-muted);
+}
+
+.lab-hero__btn {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.labo--alt {
+  background-color: var(--color-bg-alt);
+}
+
+.lab-cta {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5.5vw, 5rem);
+}
+
+.lab-cta__inner {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+  padding: clamp(2rem, 4vw, 3rem);
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.lab-cta__title {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+}
+
+.lab-cta__text {
+  margin-top: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.9;
+  color: var(--color-text-muted);
+}
+
+.lab-cta .button-normal {
+  margin-top: 1.75rem;
+  display: inline-flex;
+}
